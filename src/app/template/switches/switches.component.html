@@ -1,1 +1,76 @@
-<p>switches works!</p>
+<h2>Template: <small>Switches</small></h2>
+<hr>
+
+<form
+  #switchcForm="ngForm"
+  autocomplete="off"
+>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Gender</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input class="form-check-input" value="F" [(ngModel)]="person.gender" type="radio" name="genderRadio" id="femaleRadio" required>
+        <label class="form-check-label" for="femaleRadio">
+          Female
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" value="M" [(ngModel)]="person.gender" type="radio" name="genderRadio" id="maleRadio" required>
+        <label class="form-check-label" for="maleRadio">
+          Male
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Notification</label>
+    <div class="col-sm-9">
+      <div class="form-check form-switch mt-2">
+        <input class="form-check-input" type="checkbox" role="switch" id="notificationSwitch" name="notificaitonSwitch" [(ngModel)]="person.notifications">
+        <label class="form-check-label" for="notificationSwitch">I want notifications</label>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Terms and Conditions</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="termsAndConditions" name="termsAndConditionsCheckBox" required>
+        <label class="form-check-label" for="flexCheckDefault">
+          Terms and Conditions
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button
+        type="button"
+        [disabled]="!switchcForm.valid"
+        class="btn btn-primary float-end"
+      >
+        <span class="bi bi-save me-1"></span>
+        Save
+      </button>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{switchcForm.valid}}</pre>
+
+    <span>Pristine</span>
+    <pre>{{switchcForm.pristine}}</pre>
+
+    <span>Touched</span>
+    <pre>{{switchcForm.touched}}</pre>
+
+    <span>Value form</span>
+    <pre>{{switchcForm.value | json}}</pre>
+
+    <span>Value inner var <small><strong>person</strong></small></span>
+    <pre>{{person | json}}</pre>
+  </div>
+</div>

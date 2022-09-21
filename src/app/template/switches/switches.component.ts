@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+interface Person {
+  gender: string,
+  notifications: boolean
+}
 
 @Component({
   selector: 'app-switches',
   templateUrl: './switches.component.html'
 })
-export class SwitchesComponent implements OnInit {
+export class SwitchesComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public person: Person = {
+    gender: 'F',
+    notifications: false
   }
+
+  public termsAndConditions: boolean = false;
 
 }
