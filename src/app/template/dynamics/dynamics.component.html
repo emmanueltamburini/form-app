@@ -1,1 +1,99 @@
-<p>dynamics works!</p>
+<h2>Template: <small>Dynamics</small></h2>
+<hr>
+
+<form
+  (ngSubmit)="onSubmit()"
+  #dynamicForm="ngForm"
+  autocomplete="off"
+>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Name</label>
+    <div class="col-sm-9">
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        [(ngModel)]="person.name"
+        placeholder="User name"
+        required
+      >
+      <span
+        *ngIf="this.dynamicForm?.controls?.['name']?.touched && dynamicForm.controls['name']?.errors"
+        class="form-text text-danger"
+      >
+        This field is required
+      </span>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Add</label>
+    <div class="col-sm-9">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          name="newGame"
+          [(ngModel)]="newFavorite"
+          placeholder="Add favorite"
+          (keyup.enter)="onAdd()"
+        >
+        <button
+          (click)="onAdd()"
+          type="button"
+          class="btn btn-outline-primary">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Favorites</label>
+    <div class="col-sm-9">
+      <div *ngFor="let favorite of person.favorites, let i = index" class="input-group mb-3">
+        <input
+          [(ngModel)]="favorite.name"
+          name="favorite-{{i}}"
+          class="form-control"
+        >
+        <button
+          (click)="onDelete(i)"
+          type="button"
+          class="btn btn-outline-danger">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button
+        type="button"
+        (click)="onSubmit()"
+        [disabled]="!dynamicForm.valid"
+        class="btn btn-primary float-end"
+      >
+        <span class="bi bi-save me-1"></span>
+        Save
+      </button>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{dynamicForm.valid}}</pre>
+
+    <span>Pristine</span>
+    <pre>{{dynamicForm.pristine}}</pre>
+
+    <span>Touched</span>
+    <pre>{{dynamicForm.touched}}</pre>
+
+    <span>Value</span>
+    <pre>{{dynamicForm.value | json}}</pre>
+
+    <span>Value inner var <small><strong></strong></small></span>
+    <pre>{{person | json}}</pre>
+  </div>
+</div>
