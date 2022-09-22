@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-interface Person {
-  gender: string,
-  notifications: boolean
-}
+  interface Person {
+    gender: string,
+    notifications: boolean
+  }
 
 @Component({
   selector: 'app-switches',

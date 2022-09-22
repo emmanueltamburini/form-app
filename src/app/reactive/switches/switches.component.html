@@ -3,18 +3,20 @@
 
 <form
   autocomplete="off"
+  [formGroup]="switchcForm"
+  (ngSubmit)="onSubmit()"
 >
   <div class="mb-3 row">
     <label class="col-sm-3 col-form-label">Gender</label>
     <div class="col-sm-9">
       <div class="form-check">
-        <input class="form-check-input" value="F" type="radio" name="genderRadio" id="femaleRadio">
+        <input formControlName="gender" class="form-check-input" value="F" type="radio" id="femaleRadio">
         <label class="form-check-label" for="femaleRadio">
           Female
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" value="M" type="radio" name="genderRadio" id="maleRadio">
+        <input formControlName="gender" class="form-check-input" value="M" type="radio" id="maleRadio">
         <label class="form-check-label" for="maleRadio">
           Male
         </label>
@@ -25,7 +27,7 @@
     <label class="col-sm-3 col-form-label">Notification</label>
     <div class="col-sm-9">
       <div class="form-check form-switch mt-2">
-        <input class="form-check-input" type="checkbox" role="switch" id="notificationSwitch">
+        <input formControlName="notifications" class="form-check-input" type="checkbox" role="switch" id="notificationSwitch">
         <label class="form-check-label" for="notificationSwitch">I want notifications</label>
       </div>
     </div>
@@ -34,7 +36,7 @@
     <label class="col-sm-3 col-form-label">Terms and Conditions</label>
     <div class="col-sm-9">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <input formControlName="termsAndConditionsCheckBox" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
         <label class="form-check-label" for="flexCheckDefault">
           Terms and Conditions
         </label>
@@ -44,7 +46,7 @@
   <div class="row">
     <div class="col">
       <button
-        type="button"
+        type="submit"
         class="btn btn-primary float-end"
       >
         <span class="bi bi-save me-1"></span>
@@ -54,7 +56,7 @@
   </div>
 </form>
 
-<!-- <div class="row">
+<div class="row">
   <div class="col">
     <span>Valid</span>
     <pre>{{switchcForm.valid}}</pre>
@@ -72,4 +74,3 @@
     <pre>{{person | json}}</pre>
   </div>
 </div>
- -->
