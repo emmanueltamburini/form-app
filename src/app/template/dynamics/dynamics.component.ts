@@ -19,10 +19,9 @@ export class DynamicsComponent {
   public newFavorite: string = '';
 
   public person: Person = {
-    name: 'Emmanuel',
+    name: '',
     favorites: [
-      {id: 1, name: 'Galletas'},
-      {id: 2, name: 'Helado'}
+      {id: 1, name: ''}
     ]
   }
 

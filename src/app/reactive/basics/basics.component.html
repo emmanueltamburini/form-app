@@ -1,1 +1,90 @@
-<p>basics works!</p>
+<h2>Reactive: Basics</h2>
+<hr>
+<div class="row">
+  <div class="col">
+    <form
+      (ngSubmit)="onSubmit()"
+      autocomplete="off"
+      [formGroup]="basicForm"
+    >
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Product</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="productName"
+            placeholder="Product name"
+          >
+          <span
+            *ngIf="notValidField('productName')"
+            class="form-text text-danger"
+          >
+            Product name must have al least 3 letters
+          </span>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Price</label>
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            formControlName="productPrice"
+            placeholder="Product price"
+          >
+          <span
+            class="form-text text-danger"
+            *ngIf="notValidField('productPrice')"
+          >
+            Producto price must be 0 or greater than 0
+          </span>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Quantity</label>
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            formControlName="productQuantity"
+            placeholder="Product quantity"
+          >
+          <span
+            class="form-text text-danger"
+            *ngIf="notValidField('productQuantity')"
+          >
+            Producto quantity must be 0 or greater than 0
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            type="submit"
+            class="btn btn-primary float-end"
+          >
+            <span class="bi bi-save me-1"></span>
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+ <div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{basicForm.valid}}</pre>
+
+    <span>Pristine</span>
+    <pre>{{basicForm.pristine}}</pre>
+
+    <span>Touched</span>
+    <pre>{{basicForm.touched}}</pre>
+
+    <span>Value form</span>
+    <pre>{{basicForm.value | json}}</pre>
+  </div>
+</div>

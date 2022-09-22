@@ -1,1 +1,89 @@
-<p>dynamics works!</p>
+<h2>Reactive: <small>Dynamics</small></h2>
+<hr>
+
+<form
+  autocomplete="off"
+>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Name</label>
+    <div class="col-sm-9">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="User name"
+      >
+      <span
+        class="form-text text-danger"
+      >
+        This field is required
+      </span>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Add</label>
+    <div class="col-sm-9">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Add favorite"
+          (keyup.enter)="1"
+        >
+        <button
+          (click)="1"
+          type="button"
+          class="btn btn-outline-primary">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Favorites</label>
+    <div class="col-sm-9">
+<!--       <div *ngFor="let favorite of person.favorites, let i = index" class="input-group mb-3">
+        <input
+          class="form-control"
+        >
+        <button
+          (click)="1"
+          type="button"
+          class="btn btn-outline-danger">
+          Delete
+        </button>
+      </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button
+        type="button"
+        (click)="1"
+        class="btn btn-primary float-end"
+      >
+        <span class="bi bi-save me-1"></span>
+        Save
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- <div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{dynamicForm.valid}}</pre>
+
+    <span>Pristine</span>
+    <pre>{{dynamicForm.pristine}}</pre>
+
+    <span>Touched</span>
+    <pre>{{dynamicForm.touched}}</pre>
+
+    <span>Value form</span>
+    <pre>{{dynamicForm.value | json}}</pre>
+
+    <span>Value inner var <small><strong>person</strong></small></span>
+    <pre>{{person | json}}</pre>
+  </div>
+</div>
+ -->
