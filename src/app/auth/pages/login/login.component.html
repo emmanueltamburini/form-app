@@ -1,1 +1,54 @@
-<p>login works!</p>
+<h2>Reactive Validations</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="false">
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input formControlName="email" type="email" class="form-control" placeholder="Type your email">
+          <span *ngIf="fieldNoValid('email')" class="form-text text-danger">{{errorEmailMessage}}</span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input formControlName="password" type="password" class="form-control" placeholder="Type an password">
+          <span *ngIf="fieldNoValid('password')" class="form-text text-danger">{{errorPasswordMessage}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary float-end" [disabled]="form.pending || !form.valid">
+            Create
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<h2>Form valid</h2>
+<div>
+  Valid: {{form.valid}}
+</div>
+<div>
+  Form status: {{form.status | json}}
+</div>
+<div>
+  Form pending: {{form.pending | json}}
+</div>
+<div>
+  Form Erros: {{form.errors | json}}
+</div>
+<div>
+  Email: <pre>{{form.controls['email'].errors | json}}</pre>
+</div>
+<div>
+  password: <pre>{{form.controls['password'].errors | json}}</pre>
+</div>
+<hr>
+<div>
+  Value: <pre>{{form.value| json}}</pre>
+</div>
