@@ -53,4 +53,11 @@ export class SideMenuComponent {
       route: './auth/login'
     }
   ];
+
+  public selectorMenuItems: MenuItem[] = [
+    {
+      text: 'Nested Selectors',
+      route: './selector/nested-selectors'
+    }
+  ];
 }

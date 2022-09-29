@@ -37,3 +37,17 @@
     {{authMenuItem.text}}
   </li>
 </ul>
+
+<h2 class="mt-3">Selector</h2>
+<hr>
+
+<ul class="list-group">
+  <li
+    *ngFor="let selectorMenuItem of selectorMenuItems"
+    class="list-group-item"
+    [routerLink]="[selectorMenuItem.route]"
+    routerLinkActive="active"
+  >
+    {{selectorMenuItem.text}}
+  </li>
+</ul>
