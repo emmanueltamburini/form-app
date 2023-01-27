@@ -38,7 +38,7 @@ export class RegisterComponent {
     } else if (errors && errors['pattern']) {
       return 'Email must be in format';
     } else if (errors && errors['emailInUse']) {
-      return 'Email has been in use';
+      return 'Email is in use';
     }
 
     return ''
