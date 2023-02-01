@@ -1,6 +1,6 @@
-# HeroesApp
+# FormApp
 
-## HeroesApp README
+## FormApp README
 
 This app is a personal example about angular framework using form. This app has not a real functionality, It was created to try different forms of angular: template, reactive and even custom validations fields locally and with server response, also reactive form depends of result of an API response.
 
