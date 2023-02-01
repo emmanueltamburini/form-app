@@ -2,7 +2,7 @@
 
 ## HeroesApp README
 
-This app is a personal example about angular framework using from. This app has not a real functionality, It was created to try different forms of angular: template, reactive and even custom validations fields locally and with server response, also reactive form depends of result of an API response.
+This app is a personal example about angular framework using form. This app has not a real functionality, It was created to try different forms of angular: template, reactive and even custom validations fields locally and with server response, also reactive form depends of result of an API response.
 
 You can check final result [here](https://eclectic-caramel-8662ca.netlify.app/). This app use a server in glitch, this platform use a serverless server, it means that the first time you enter, it is very possible that the information takes time to arrive while the server turns on. For this app the server function only have the function to check a email field in one form. It means that almost all app will be functionally without this server connection (if you have a problem with url please notice to emmanueltamburini@gmail.com).
 
